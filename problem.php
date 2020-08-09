@@ -27,7 +27,7 @@ if (isset($_POST["words"])) {
             $start=$_POST['start'];
         }
     if (preg_match('/^[0-9]+$/', $start) === 0) {
-            $err_msg[] = '半角英数字かつ文字数は6文字以上で入力してください。';
+            $err_msg[] = '半角数字で入力してください。';
         }
 
     $end=0;
@@ -35,23 +35,24 @@ if (isset($_POST["words"])) {
             $end=$_POST['end'];
         }
     if (preg_match('/^[0-9]+$/', $end) === 0) {
-            $err_msg[] = '半角英数字かつ文字数は6文字以上で入力してください。';
+            $err_msg[] = '半角数字で入力してください。';
         }
 
     $length=0;
     if(isset($_POST['length'])){
-            $length=$_POST['length'];
+            $length=(int)$_POST['length'];
         }
     if (preg_match('/^[0-9]+$/', $length) === 0) {
-            $err_msg[] = '半角英数字かつ文字数は6文字以上で入力してください。';
+            $err_msg[] = '半角数字で入力してください。';
         }
-    $view=$end-$start;
+        
+    $view=$end-$start+1;
     $word_start=$start-1;
     $limit  = ' limit ' . $word_start . ',' . $view;
     if (count($err_msg)===0){
         if($link!==FALSE){
             $sql='SELECT * FROM words order by number'.$limit;
-            var_dump($sql);
+            
             if ($result = mysqli_query($link, $sql)) {
                 $i = 0;
                 while ($row = mysqli_fetch_assoc($result)) {
@@ -63,9 +64,17 @@ if (isset($_POST["words"])) {
               } else {
                 $err_msg[] = 'SQL失敗:' . $sql;
               }
+              $words[]=shuffle($words);
+              $words=array_slice($words,0,$length);
               mysqli_free_result($result);
         }
     }
+}
+if(isset($_POST['return'])===TRUE){
+    $words = unserialize(base64_decode($_POST["answer"]));
+    $start = unserialize(base64_decode($_POST["start"]));
+    $end = unserialize(base64_decode($_POST["end"]));
+    $length = unserialize(base64_decode($_POST["length"]));
 }
 ?>
 <!DOCTYPE html>
@@ -74,19 +83,48 @@ if (isset($_POST["words"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>単語テスト</title>
+    <style>
+     table,th,td{
+         border:solid 1px;
+     }
+     th{
+        background-color: #53a7ef;
+     }
+     tr:nth-child(2n+1) {
+        background-color: #edf9ff;
+     }
+     table{
+         margin:0 auto;
+     }
+     .top{
+         margin: 0 45%;
+     }
+     
+    
+    </style>
 </head>
 <body>
 <?php  foreach ($err_msg as $err){ ?>
         <li><?php print $err; ?></li>
  <?php } ?>
 <section>
-       <h2>単語テスト</h2>
-       
-           <table>
+       <div class="top">
+       <form action="answer.php" method="post">
+        <INPUT TYPE="hidden" NAME="answer" VALUE="<?= base64_encode(serialize($words)); ?>">
+        <INPUT TYPE="hidden" NAME="start" VALUE="<?= base64_encode(serialize($start)); ?>">
+        <INPUT TYPE="hidden" NAME="end" VALUE="<?= base64_encode(serialize($end)); ?>">
+        <INPUT TYPE="hidden" NAME="length" VALUE="<?= base64_encode(serialize($length)); ?>">
+
+        <input type="submit" value="答え">
+       </form>
+       <h2 >単語テスト</h2>
+       </div>
+       <table>
+           　　<caption><?php print '範囲　'.$start.'~'.$end.'まで　　出題数　'.$length ?></caption>
                <tr>
                    <th>番号</th>
                    <th>英単語</th>
-                   <th>日本語訳</th>
+                   <th>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp日本語訳&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
                </tr>
            
 <?php       foreach ($words as $word) { ?>
@@ -94,12 +132,13 @@ if (isset($_POST["words"])) {
                    
                    <td><?php print $word['number']; ?></td>
                    <td><?php print $word['word']; ?></td>
-                   <td><?php print $word['translation']; ?></td>
+                   <td></td>
                    
                </tr>
 <?php    } ?>
           </table>
-       
+           
+          
    </section>
 </body>
 </html>

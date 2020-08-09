@@ -33,7 +33,7 @@
 </head>
 <body>
     <h1>単語テスト</h1>
-    <form method="POST" action="result.php">
+    <form method="POST" action="problem.php">
       <label for="start">始まりの数字:</label><input type="text" name="start" id="start"><br>
       <label for="end">終わりの数字:</label><input type="text" name="end" id="end"><br>
       <label for="length">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp出題数:</label><input type="text" name="length" id="length"><br>
