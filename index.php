@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>単語テスト</title>
+    <title>東進単語テスト</title>
     <style>
      .button {
       display       : inline-block;
@@ -29,10 +29,14 @@
       color         : #00007f;     /* 背景色     */
       background    : #ffffff;     /* 文字色     */
     }
+    .top{
+      margin:0 40%;
+    }
     </style>
 </head>
 <body>
-    <h1>単語テスト</h1>
+　　<div class="top">
+    <h1>東進単語テスト</h1>
     <form method="POST" action="problem.php">
       <label for="start">始まりの数字:</label><input type="text" name="start" id="start"><br>
       <label for="end">終わりの数字:</label><input type="text" name="end" id="end"><br>
@@ -40,5 +44,6 @@
       <input type="hidden" name="words">
       <input type="submit" name="create" value="作成" class="button">
     </form>
+    </div>
 </body>
 </html>
