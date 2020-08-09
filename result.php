@@ -34,7 +34,7 @@ if (isset($_POST["words"])) {
     if(isset($_POST['end'])){
             $end=$_POST['end'];
         }
-    if (preg_match('/^[1-9]+$/', $end) === 0) {
+    if (preg_match('/^[0-9]+$/', $end) === 0) {
             $err_msg[] = '半角英数字かつ文字数は6文字以上で入力してください。';
         }
 
@@ -45,9 +45,13 @@ if (isset($_POST["words"])) {
     if (preg_match('/^[0-9]+$/', $length) === 0) {
             $err_msg[] = '半角英数字かつ文字数は6文字以上で入力してください。';
         }
+    $view=$end-$start;
+    $word_start=$start-1;
+    $limit  = ' limit ' . $word_start . ',' . $view;
     if (count($err_msg)===0){
         if($link!==FALSE){
-            $sql="SELECT * FROM words WHERE (ABS(CAST((BINARY_CHECKSUM (number, NEWID())) as int)) % 100) < 10";
+            $sql='SELECT * FROM words order by number'.$limit;
+            var_dump($sql);
             if ($result = mysqli_query($link, $sql)) {
                 $i = 0;
                 while ($row = mysqli_fetch_assoc($result)) {
