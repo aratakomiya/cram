@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ターゲット単語テスト</title>
+    <title>ターゲット_5単語テスト</title>
     <style>
      .button {
       display       : inline-block;
@@ -39,9 +39,9 @@
 　　　<form action="start.php">
     <input type="submit" value="TOPページ">
     </form>
-    <h1>ターゲット単語テスト</h1>
+    <h1>ターゲット_5 単語テスト</h1>
     
-    <form method="POST" action="target_problem.php">
+    <form method="POST" action="target_5_problem.php">
       <label for="start">始まりの数字:</label><input type="text" name="start" id="start"><br>
       <label for="end">終わりの数字:</label><input type="text" name="end" id="end"><br>
       <label for="length">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp出題数:</label><input type="text" name="length" id="length"><br>

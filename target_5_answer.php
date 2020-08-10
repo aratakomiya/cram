@@ -10,7 +10,7 @@ $length = unserialize(base64_decode($_POST["length"]));
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ターゲット答え</title>
+    <title>ターゲット_5答え</title>
     <style>
      .border{
         border:solid 1px;
@@ -57,10 +57,10 @@ $length = unserialize(base64_decode($_POST["length"]));
    <div class="top">
    　　<table>
         <tr>
-        <td><form action="target_index.php">
+        <td><form action="target_5_index.php">
         <input type="submit" value="問題作成ページ">
         </form></td>
-        <td><form action="target_problem.php" method="post">
+        <td><form action="target_5_problem.php" method="post">
         <INPUT TYPE="hidden" NAME="answer" VALUE="<?= base64_encode(serialize($words)); ?>">
         <INPUT TYPE="hidden" NAME="start" VALUE="<?= base64_encode(serialize($start)); ?>">
         <INPUT TYPE="hidden" NAME="end" VALUE="<?= base64_encode(serialize($end)); ?>">
@@ -74,7 +74,7 @@ $length = unserialize(base64_decode($_POST["length"]));
        </table>
    </div>
 　　　<table class="border">
-        <caption><?php print ' ターゲット単語　範囲　'.$start.'~'.$end.'まで　　出題数　'.$length ?></caption>
+        <caption><?php print ' ターゲット_5 単語　範囲　'.$start.'~'.$end.'まで　　出題数　'.$length ?></caption>
                     <tr class="border">
                         <th class="border">番号</th>
                         <th class="border">英単語</th>
