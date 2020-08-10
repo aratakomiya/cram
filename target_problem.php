@@ -51,7 +51,7 @@ if (isset($_POST["words"])) {
     $limit  = ' limit ' . $word_start . ',' . $view;
     if (count($err_msg)===0){
         if($link!==FALSE){
-            $sql='SELECT * FROM words order by number'.$limit;
+            $sql='SELECT * FROM target order by number'.$limit;
             
             if ($result = mysqli_query($link, $sql)) {
                 $i = 0;
@@ -82,7 +82,7 @@ if(isset($_POST['return'])===TRUE){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>単語テスト</title>
+    <title>ターゲット単語テスト</title>
     <style>
      
      .border{
@@ -132,7 +132,10 @@ if(isset($_POST['return'])===TRUE){
        <div class="top">
        <table>
         <tr>
-        <td><form action="answer.php" method="post">
+        <td><form action="target_index.php">
+        <input type="submit" value="問題作成ページ">
+        </form></td>
+        <td><form action="target_answer.php" method="post">
         <INPUT TYPE="hidden" NAME="answer" VALUE="<?= base64_encode(serialize($words)); ?>">
         <INPUT TYPE="hidden" NAME="start" VALUE="<?= base64_encode(serialize($start)); ?>">
         <INPUT TYPE="hidden" NAME="end" VALUE="<?= base64_encode(serialize($end)); ?>">
@@ -141,12 +144,12 @@ if(isset($_POST['return'])===TRUE){
         <input type="submit" value="答え" class="button">
        </form></td>
        <td><input type="button" value="印刷" class="noprint" onclick="window.print();"/></td>
-       
+       </tr>
        </table>
        </div>
-        </tr>
+        
        <table class="border">
-           　　<caption><?php print '東進単語　範囲　'.$start.'~'.$end.'まで　　出題数　'.$length ?></caption>
+           　　<caption><?php print 'ターゲット単語　範囲　'.$start.'~'.$end.'まで　　出題数　'.$length ?></caption>
                <tr class="border">
                    <th class="border">番号</th>
                    <th class="border">英単語</th>

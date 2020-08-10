@@ -10,7 +10,7 @@ $length = unserialize(base64_decode($_POST["length"]));
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>答え</title>
+    <title>東進答え</title>
     <style>
      .border{
         border:solid 1px;
@@ -57,7 +57,10 @@ $length = unserialize(base64_decode($_POST["length"]));
    <div class="top">
    　　<table>
         <tr>
-        <td><form action="problem.php" method="post">
+        <td><form action="toushin_index.php">
+        <input type="submit" value="問題作成ページ">
+        </form></td>
+        <td><form action="toushin_problem.php" method="post">
         <INPUT TYPE="hidden" NAME="answer" VALUE="<?= base64_encode(serialize($words)); ?>">
         <INPUT TYPE="hidden" NAME="start" VALUE="<?= base64_encode(serialize($start)); ?>">
         <INPUT TYPE="hidden" NAME="end" VALUE="<?= base64_encode(serialize($end)); ?>">
@@ -67,7 +70,7 @@ $length = unserialize(base64_decode($_POST["length"]));
         <input type="submit" value="問題"  class="noprint">
        </form></td>
        <td><input type="button" value="印刷" class="noprint" onclick="window.print();"/></td>
-       
+       </tr>
        </table>
    </div>
 　　　<table class="border">
