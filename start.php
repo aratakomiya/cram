@@ -21,7 +21,7 @@
 　　　<div class="pic">
        <a href="toushin_index.php"><img src="img/toushin.jpeg" title="東進英単語"></a>
        <a href="target_5_index.php"><img src="img/target_5.jpeg" title="ターゲット_5英単語"></a>
-       <a href="target_5_index.php"><img src="img/target_6.jpeg" title="ターゲット_6英単語"></a>
+       <a href="target_6_index.php"><img src="img/target_6.jpeg" title="ターゲット_6英単語"></a>
      </div>
 </body>
 </html>
