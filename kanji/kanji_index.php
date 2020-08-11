@@ -43,7 +43,7 @@
 </head>
 <body>
 　　<div class="top">
-　　　<form action="start.php">
+　　　<form action="../tool/start.php">
     <input type="submit" value="TOPページ">
     </form>
     <h1>漢字テスト</h1>

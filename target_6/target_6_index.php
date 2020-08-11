@@ -36,7 +36,7 @@
 </head>
 <body>
 　　<div class="top">
-　　　<form action="start.php">
+　　　<form action="../tool/start.php">
     <input type="submit" value="TOPページ">
     </form>
     <h1>target_6 単語テスト</h1>
