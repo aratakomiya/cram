@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ターゲット_6単語テスト</title>
+    <title>ターゲット _6単語テスト</title>
     <style>
      .button {
       display       : inline-block;
@@ -30,7 +30,7 @@
       background    : #ffffff;     /* 文字色     */
     }
     .top{
-      margin:0 40%;
+      margin:0 36%;
     }
     </style>
 </head>
@@ -39,7 +39,7 @@
 　　　<form action="start.php">
     <input type="submit" value="TOPページ">
     </form>
-    <h1>ターゲット_6 単語テスト</h1>
+    <h1>target_6 単語テスト</h1>
     
     <form method="POST" action="target_6_problem.php">
       <label for="start">始まりの数字:</label><input type="text" name="start" id="start"><br>
