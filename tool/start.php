@@ -14,6 +14,11 @@
           width:300px;
           height:300px;
       }
+      body{
+        background-image:url(84081260.jpeg);
+        background-repeat: no-repeat;
+        background-size:cover;
+      }
     </style>
 </head>
 <body>
