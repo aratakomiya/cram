@@ -10,6 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>wordtest</title>
 　　 <style>
+      h1{
+          color:white;
+      }
       img{
           width:300px;
           height:300px;
