@@ -27,14 +27,17 @@
 <body>
     <h1>単語テスト</h1>
 　　　<div class="pic">
+       <a href="../kanji/kanji_index.php"><img src="../img/kanji.png" title="小中学漢字"></a>
+       <a href="../junior_en/junior_en_index.php"><img src="../img/junior_en.png" title="中学英単語"></a>
        <a href="../toushin/toushin_index.php"><img src="../img/toushin.jpeg" title="東進英単語"></a>
        <a href="../toushin_i/toushin_i_index.php"><img src="../img/toushin_i.jpeg" title="東進英熟語"></a>
        <a href="../target_5/target_5_index.php"><img src="../img/target_5.jpeg" title="ターゲット_5英単語"></a>
        <a href="../target_6/target_6_index.php"><img src="../img/target_6.jpeg" title="ターゲット_6英単語"></a>
-       <a href="../kanji/kanji_index.php"><img src="../img/kanji.png" title="漢字"></a>
        <a href="../system/system_index.php"><img src="../img/system.jpg" title="システム英単語"></a>
-       <a href="../duo/duo_index.php"><img src="../img/duo.jpeg" title="DUO"></a>
+       <a href="../system_5/system_5_index.php"><img src="../img/system_5jpeg.jpeg" title="システム英単語＿5"></a>
        <a href="../sokutan/sokutan_index.php"><img src="../img/sokudoku.jpg" title="速読英単語"></a>
+       <a href="../sokujuku/sokujuku_index.php"><img src="../img/sokujuku.jpeg" title="速読英熟語"></a>
+       <a href="../duo/duo_index.php"><img src="../img/duo.jpeg" title="DUO"></a>
      </div>
 </body>
 </html>
