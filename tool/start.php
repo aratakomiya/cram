@@ -38,6 +38,7 @@
        <a href="../sokutan/sokutan_index.php"><img src="../img/sokudoku.jpg" title="速読英単語"></a>
        <a href="../sokujuku/sokujuku_index.php"><img src="../img/sokujuku.jpeg" title="速読英熟語"></a>
        <a href="../duo/duo_index.php"><img src="../img/duo.jpeg" title="DUO"></a>
+       <a href="../kobun315/kobun315_index.php"><img src="../img/kobun315.jpeg" title="古文単語315"></a>
      </div>
 </body>
 </html>
