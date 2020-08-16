@@ -33,11 +33,23 @@ if (isset($_SESSION['id']) === TRUE) {
         background-repeat: no-repeat;
         background-size:cover;
       }
+      .logout{
+          color:white;
+          font-size:15px;
+      }
+      .top{
+         display:table;
+      }
+      .top a{
+          color:white;
+      }
     </style>
 </head>
 <body>
+    <div class="top">
     <h1>単語テスト</h1>
-    <a href="../login/logout.php" >ログアウト</a>
+    <a href="../login/logout.php" >ログアウトする</a>
+    </div>
 　　　<div class="pic">
        <a href="../kanji/kanji_index.php"><img src="../img/kanji.png" title="小中学漢字"></a>
        <a href="../junior_en/junior_en_index.php"><img src="../img/junior_en.png" title="中学英単語"></a>
