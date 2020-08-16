@@ -1,8 +1,8 @@
 <?php
-$host   = 'mysql'; 
-$user   = 'root';  
-$passwd = 'root';   
-$dbname = 'practice';
+$host   = 'mysql1028.db.sakura.ne.jp'; 
+$user   = 'cram-school';  
+$passwd = 'cram-school';   
+$dbname = 'cram-school_practice';
 $err_msg = [];
 $words = [];
 
