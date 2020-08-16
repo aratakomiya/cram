@@ -4,6 +4,19 @@ $words = unserialize(base64_decode($_POST["answer"]));
 $start = unserialize(base64_decode($_POST["start"]));
 $end = unserialize(base64_decode($_POST["end"]));
 $length = unserialize(base64_decode($_POST["length"]));
+
+// ログイン処理
+session_start();
+if (isset($_SESSION['id']) === TRUE) {
+    
+
+   $id = $_SESSION['id'];
+   $user_name = $_SESSION['user_name'];
+} else {
+   // 非ログインの場合、ログインページへリダイレクト
+   header('Location: ../login/top_login.php');
+   exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

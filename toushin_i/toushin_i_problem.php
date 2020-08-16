@@ -6,6 +6,18 @@ $dbname = 'cram-school_practice';
 $err_msg = [];
 $words = [];
 
+// ログイン処理
+session_start();
+if (isset($_SESSION['id']) === TRUE) {
+    
+
+   $id = $_SESSION['id'];
+   $user_name = $_SESSION['user_name'];
+} else {
+   // 非ログインの場合、ログインページへリダイレクト
+   header('Location: ../login/top_login.php');
+   exit;
+}
 // DB接続
 $link=mysqli_connect($host,$user,$passwd,$dbname);
 if($link === FALSE){
