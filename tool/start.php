@@ -52,7 +52,7 @@ if (isset($_SESSION['id']) === TRUE) {
     </div>
 　　　<div class="pic">
        <a href="../kanji/kanji_index.php"><img src="../img/kanji.png" title="小中学漢字"></a>
-       <a href="../junior_en/junior_en_index.php"><img src="../img/junior_en.png" title="中学英単語"></a>
+       <a href="../junior_english/choice.php"><img src="../img/junior_en.png" title="中学英単語"></a>
        <a href="../target_5/target_5_index.php"><img src="../img/target_5.jpeg" title="ターゲット_5英単語"></a>
        <a href="../target_6/target_6_index.php"><img src="../img/target_6.jpeg" title="ターゲット_6英単語"></a>
        <a href="../system/system_index.php"><img src="../img/system.jpg" title="システム英単語"></a>

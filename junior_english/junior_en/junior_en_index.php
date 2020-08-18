@@ -8,7 +8,7 @@ if (isset($_SESSION['id']) === TRUE) {
    $user_name = $_SESSION['user_name'];
 } else {
    // 非ログインの場合、ログインページへリダイレクト
-   header('Location: ../login/top_login.php');
+   header('Location: ../../login/top_login.php');
    exit;
 }
 ?>
@@ -19,7 +19,7 @@ if (isset($_SESSION['id']) === TRUE) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>中学英単語テスト</title>
+    <title>中学英単語　英→日</title>
     <style>
      .button {
       display       : inline-block;
@@ -50,10 +50,10 @@ if (isset($_SESSION['id']) === TRUE) {
 </head>
 <body>
 　　<div class="top">
-　　　<form action="../tool/start.php">
-    <input type="submit" value="TOPページ">
+　　　<form action="../choice.php">
+    <input type="submit" value="戻る">
     </form>
-    <h1>中学英単語テスト</h1>
+    <h1>中学英単語　英→日</h1>
     
     <form method="POST" action="junior_en_problem.php">
       <label for="start">始まりの数字:</label><input type="text" name="start" id="start"><br>
@@ -64,7 +64,7 @@ if (isset($_SESSION['id']) === TRUE) {
     </form>
     </div>
     <div class="middle">
-    <a href="../img/junior_en.pdf" target="_blank">生徒配布用はこちら</a>
+    
     </div>
 </body>
 </html>

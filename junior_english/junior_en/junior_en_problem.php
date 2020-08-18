@@ -15,7 +15,7 @@ if (isset($_SESSION['id']) === TRUE) {
    $user_name = $_SESSION['user_name'];
 } else {
    // 非ログインの場合、ログインページへリダイレクト
-   header('Location: ../login/top_login.php');
+   header('Location: ../../login/top_login.php');
    exit;
 }
 
@@ -95,7 +95,7 @@ if(isset($_POST['return'])===TRUE){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>中学英単語テスト</title>
+    <title>中学英単語　英→日</title>
     <style>
      
      .border{
@@ -162,7 +162,7 @@ if(isset($_POST['return'])===TRUE){
        </div>
         
        <table class="border">
-           　　<caption><?php print '中学英単語　範囲　'.$start.'~'.$end.'まで　　出題数　'.$length ?></caption>
+           　　<caption><?php print '中学英単語　英→日　範囲　'.$start.'~'.$end.'まで　　出題数　'.$length ?></caption>
                <tr class="border">
                    <th class="border">番号</th>
                    <th class="border">英単語</th>
