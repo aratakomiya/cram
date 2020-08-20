@@ -12,10 +12,10 @@ if (isset($_SESSION['id']) === TRUE) {
    exit;
 }
 
-$host   = 'mysql1028.db.sakura.ne.jp'; 
-$user   = 'cram-school';  
-$passwd = 'cram-school';   
-$dbname = 'cram-school_practice';
+$host   = 'mysql'; 
+$user   = 'root';  
+$passwd = 'root';   
+$dbname = 'practice';
 $err_msg = [];
 $words = [];
 
@@ -159,10 +159,11 @@ if(isset($_POST['return'])===TRUE){
        <td><input type="button" value="印刷" class="noprint" onclick="window.print();"/></td>
        </tr>
        </table>
+       
        </div>
         
        <table class="border">
-           　　<caption><?php print '東進単語　範囲　'.$start.'~'.$end.'まで　　出題数　'.$length ?></caption>
+           　　<caption><?php print '東進単語　範囲　'.$start.'~'.$end.'まで　　出題数　'.$length ?><?php print '     点数　 /'.$length?></caption>
                <tr class="border">
                    <th class="border">番号</th>
                    <th class="border">英単語</th>

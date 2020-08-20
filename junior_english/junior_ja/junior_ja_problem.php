@@ -161,7 +161,7 @@ if(isset($_POST['return'])===TRUE){
        </div>
         
        <table class="border">
-           　　<caption><?php print '中学英単語 日→英　範囲　'.$start.'~'.$end.'まで　　出題数　'.$length ?></caption>
+           　　<caption><?php print '中学英単語 日→英　範囲　'.$start.'~'.$end.'まで　　出題数　'.$length ?><?php print '     点数　 /'.$length?></caption>
                <tr class="border">
                    <th class="border">番号</th>
                    <th class="border">日本語</th>
