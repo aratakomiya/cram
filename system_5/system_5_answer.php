@@ -1,5 +1,5 @@
 <?php
-
+require_once '../include/function.php';
 $words = unserialize(base64_decode($_POST["answer"]));
 $start = unserialize(base64_decode($_POST["start"]));
 $end = unserialize(base64_decode($_POST["end"]));
@@ -97,9 +97,9 @@ if (isset($_SESSION['id']) === TRUE) {
         <?php       foreach ($words as $word) { ?>
                     <tr class="border">
                         
-                        <td class="border"><?php print $word['number']; ?></td>
-                        <td class="border"><?php print $word['word']; ?></td>
-                        <td class="border"><?php print $word['translation']; ?></td>
+                        <td class="border"><?php print h($word['number']); ?></td>
+                        <td class="border"><?php print h($word['word']); ?></td>
+                        <td class="border"><?php print h($word['translation']); ?></td>
                         
                     </tr>
         <?php    } ?>

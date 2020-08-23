@@ -1,4 +1,5 @@
 <?php
+
 // ログイン処理
 session_start();
 if (isset($_SESSION['id']) === TRUE) {

@@ -1,4 +1,6 @@
 <?php
+require_once '../include/function.php';
+
 // ログイン処理
 session_start();
 if (isset($_SESSION['id']) === TRUE) {
@@ -12,10 +14,10 @@ if (isset($_SESSION['id']) === TRUE) {
    exit;
 }
 
-$host   = 'mysql'; 
-$user   = 'root';  
-$passwd = 'root';   
-$dbname = 'practice';
+$host   = 'mysql1028.db.sakura.ne.jp'; 
+$user   = 'cram-school';  
+$passwd = 'cram-school';   
+$dbname = 'cram-school_practice';
 $err_msg = [];
 $words = [];
 
@@ -62,6 +64,8 @@ if (isset($_POST["words"])) {
     $view=$end-$start+1;
     $word_start=$start-1;
     $limit  = ' limit ' . $word_start . ',' . $view;
+    $limit=my_es($link,$limit);
+    
     if (count($err_msg)===0){
         if($link!==FALSE){
             $sql='SELECT * FROM words order by number'.$limit;
@@ -173,8 +177,8 @@ if(isset($_POST['return'])===TRUE){
 <?php       foreach ($words as $word) { ?>
                <tr class="border">
                    
-                   <td class="border"> <?php print $word['number']; ?></td>
-                   <td class="border"> <?php print $word['word']; ?></td>
+                   <td class="border"> <?php print h($word['number']); ?></td>
+                   <td class="border"> <?php print h($word['word']); ?></td>
                    <td class="border"></td>
                    
                </tr>

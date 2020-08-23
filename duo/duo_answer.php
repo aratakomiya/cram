@@ -1,5 +1,17 @@
 <?php
+require_once '../include/function.php';
+// ログイン処理
+session_start();
+if (isset($_SESSION['id']) === TRUE) {
+    
 
+   $id = $_SESSION['id'];
+   $user_name = $_SESSION['user_name'];
+} else {
+   // 非ログインの場合、ログインページへリダイレクト
+   header('Location: ../login/top_login.php');
+   exit;
+}
 $words = unserialize(base64_decode($_POST["answer"]));
 $start = unserialize(base64_decode($_POST["start"]));
 $end = unserialize(base64_decode($_POST["end"]));
@@ -84,9 +96,9 @@ $length = unserialize(base64_decode($_POST["length"]));
         <?php       foreach ($words as $word) { ?>
                     <tr class="border">
                         
-                        <td class="border"><?php print $word['number']; ?></td>
-                        <td class="border"><?php print $word['word']; ?></td>
-                        <td class="border"><?php print $word['translation']; ?></td>
+                        <td class="border"><?php print h($word['number']); ?></td>
+                        <td class="border"><?php print h($word['word']); ?></td>
+                        <td class="border"><?php print h($word['translation']); ?></td>
                         
                     </tr>
         <?php    } ?>

@@ -64,3 +64,51 @@ function get_db_connect(){
 function close_db_connect($link){
     mysqli_close($link);
 }
+
+function isPost(){
+
+    if($_SERVER['REQUEST_METHOD']==='POST'){
+        return true;
+    }
+    return false;
+
+}
+
+function getGet($name,$default=null){
+
+    if(isset($_GET[$name])){
+        return $_GET[$name];
+    }
+    return $default;
+}
+
+function getPost($name,$default=null){
+
+    if(isset($_POST[$name])){
+        return $_POST[$name];
+    }
+    return $default;
+}
+
+function getHost(){
+    if(!empty($_SERVER['HTTP_HOST'])){
+        return $_SERVER['HTTP_HOST'];
+    }
+    return $_SERVER['SERVER_NAME'];
+}
+
+function isSsl(){
+    if(isset($_SERVER['HTTPS'])&&$_SERVER['HTTPS']==='on'){
+        return true;
+    }
+    return false;
+}
+
+function getRequestUri(){
+    return $_SERVER['REQUEST_URI'];
+}
+
+function my_es($link,$str){
+    $str = mysqli_real_escape_string($link, $str);
+    return $str;
+}
