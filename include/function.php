@@ -1,18 +1,8 @@
 <?php
 
 function h($str) {
-    return htmlspecialchars($str, ENT_QUOTES, HTML_CHARACTER_SET);
+    return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
 }
-
-// function insert_db($link,$sql){
-//     if(mysqli_query($link,$sql)!==TRUE){
-//         $err_msg[]='bbs_table:INSERT error'.$sql;
-//         return FALSE;
-//     }
-    
-//     return TRUE;
-// }
-
 
 
 function get_as_array($link,$sql){

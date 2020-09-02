@@ -66,7 +66,7 @@ if (isset($_SESSION['id']) === TRUE) {
        <a href="../kobun315/kobun315_index.php"><img src="../img/kobun315.jpeg" title="古文単語315"></a>
        <a href="../madonna/madonna_index.php"><img src="../img/madonna.jpg" title="マドンナ古文単語"></a>
        <a href="../tunagaru/tunagaru_index.php"><img src="../img/tunagaru.jpeg" title="つながる、まとまる古文単語500"></a>
-       
+       <a href="../pass_s2/pass_s2_index.php"><img src="../img/pass_s2.png" title="パス単準2級"></a>
      </div>
 </body>
 </html>
